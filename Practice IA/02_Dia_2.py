@@ -45,9 +45,20 @@ elif num3 >= num1 and num3 >= num2:
 # numero par o impar
 
 
-numero = float(input("ingresa un numero"))
+numero = int(input("ingresa un numero"))
 
 if numero % 2 == 0:
     print("el numero es par")
 else:
     print("el numero es impar")
+
+
+# año bisiesto
+
+anio = int(input("ingresa un año"))
+
+# forma 1
+if (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0):
+    print(f"el año {anio} es bisiesto")
+else:
+    print(f"el año {anio} no es bisiesto")
