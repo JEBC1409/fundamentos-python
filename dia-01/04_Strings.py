@@ -26,11 +26,36 @@ print(f"Mi nombres es {name} {surname} y mi edad es {age}")
 
 
 # Desempaquetado de caracteres
-languaje = "Python"
-a, b, c, d, e, f = languaje
-print(a)
-print(e)
+languaje = "python"
+# a, b, c, d, e, f = languaje
+# print(a)
+# print(e)
 
 # Division
 languaje_slice = languaje[1:3]
 print(languaje_slice)
+
+
+languaje_slice = languaje[0:6:2]
+print(languaje_slice)
+
+languaje_slice = languaje[-2]
+print(languaje_slice)
+
+
+# Reverse
+
+reversed_languaje = languaje[::-1]
+print(reversed_languaje)
+
+
+# Funciones
+
+print(languaje.capitalize())
+print(languaje.upper())
+print(languaje.count("t"))
+print(languaje.isnumeric())
+print("1".isnumeric())
+print(languaje.lower())
+print(languaje.upper().isupper())
+print(languaje.startswith("py "))
