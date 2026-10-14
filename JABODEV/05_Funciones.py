@@ -162,3 +162,62 @@ def second():
 
 
 first()
+print()
+
+# if a functions assigns a valuee to variable as local to the whole
+# function To change a global variable from inside a function, declare
+# it firts with a global statement.Better stiill: use different names
+# for different variables
+
+counter = 0
+
+
+def add_one_broken():
+    counter = counter + 1  # UnboundLocalError
+
+
+def add_one():
+    global counter  # "counter es la global"
+    counter = counter + 1
+
+
+add_one()
+print(counter)  # 1
+
+
+# Alternativa sin global: parametro + return
+def add_one_clean(value):
+    return value + 1
+
+
+counter = add_one_clean(counter)
+print(counter)  # 2
+
+
+##Errors: try and except
+# An unhandle error crashes the whole program. With try and except
+# you detect and expected error and keep going.Put the risky code
+# in the try clause.If an error of the named type happens there,
+# execution jumps to the except clause and never goes back
+# into the try
+
+
+def split_bill(total, people):
+    return total / people
+
+
+print(split_bill(100, 4))  # 25.0
+# print(split_bill(100, 0))  # zeroDivisionError: el programa se cae
+
+
+# con try/except
+def split_bill_safe(total, people):
+    try:
+        return total / people
+    except ZeroDivisionError:
+        print("No pueded dividir entre 0")
+
+
+print(split_bill_safe(100, 4))  # 25.0
+print(split_bill_safe(100, 0))  # message and then None
+print(split_bill_safe(100, 5))  # 20.0
