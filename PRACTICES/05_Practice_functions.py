@@ -64,6 +64,7 @@ print(classify_grade(3.95))  # Approved
 print(classify_grade(4.5))  # Outstanding
 print(classify_grade(7))  # Invalid
 print(classify_grade(-1))  # Invalid
+print(" ")
 
 
 # ask number
