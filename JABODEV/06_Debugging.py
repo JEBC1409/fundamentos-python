@@ -36,7 +36,7 @@ assert discount >= 0 and discount <= 1, "El descuento debe estar entre 0 y 1"
 
 
 ###logging: es el rastro de migajas de pan
-# logging is a record og message that show whem the program reached a
+# logging is a record of message that show whem the program reached a
 # a certain point and what the variables held. is the organized version
 # of putting print() calls in your code, To use it, import  the logging module
 # and configure it once at the top with  basicConfig().Log messages are for
@@ -61,3 +61,74 @@ def sum_to(n):
 
 
 print(sum_to(4))  # imprime 6, pero debería ser 10
+
+
+##Los cincos niveles de log
+# loggin levels let yot categorize messages by importance. There are five
+# from least to most important: DEBUG, INFO,WARNING,ERROR and CRITICAL
+# when  you set a level, you see that level and everything above it, and
+# the lower ones are hidden
+
+# logging.debug()
+# logging.info()
+# logging.warning()
+# logging.error()
+# logging.critical
+
+
+# El depurador y sus botones
+# A debugger runs your program one line at a time and waits
+# for you after  each one. It is slower than a normal run,
+# but you can see the real values of the variables instead
+# of guessing them from the code.
+# A breakpoint marks a line where the debugger must pausea; until
+# it  gets there, the program runs at normal speed
+
+# Reto: caza los bugs
+# The earlier you catch a bug, the easier ir is to fix. This small
+# game has more than one bug.Run it several times, write down what goes
+# wrong, and use tools fomr this chapter to find teh cause of each one
+"""""
+import random
+
+guess = ""
+while guess not in ("par", "impar"):
+    guess = input("¿El dado saldrá par o impar? ")
+
+roll = random.randint(1, 6)
+if roll % 2 == 0:
+    result = "par"
+else:
+    result = "impar"
+
+if roll == guess:
+    print("¡Ganaste!")
+else:
+    print("Perdiste")
+print("Salió " + roll)
+
+""" """"""
+
+##Corrección
+
+
+import random
+
+guess = ""
+while guess not in ("par", "impar"):
+    guess = input("¿El dado saldrá par o impar? ").lower()
+
+
+roll = random.randint(1, 6)
+print(roll)
+if roll % 2 == 0:
+    result = "par"
+else:
+    result = "impar"
+
+if result == guess:
+    print("¡Ganaste!")
+else:
+    print("Perdiste")
+
+print(f"salio {roll}")
