@@ -208,3 +208,51 @@ print(queue)  # ['Sofía', 'Luis', 'Ana']
 
 result = queue.sort()
 print(result)  # None
+
+print(" ")
+
+##Cortocircuito con and / or
+# Boolean operators have a subtle behavior called short-circuiting. In False and x, the result is
+# False whatever x is, so python does not even evaluate x.likewise, True or x is True without looking
+# at x. This is useful to avoid an indexeError: check that the list is not empty before reading its
+# fisrt  item
+
+
+products = []
+
+# if product[0] == "arroz":     # indexError con la lista vacia
+
+if len(products) > 0 and products[0] == "arroz":
+    print("El primero es arroz")
+else:
+    print("No hay primero, o no es arroz")
+
+print(" ")
+
+# Secuencias, mutables  y tuplas
+# Lists, strings, tuples and range() objects are sequence types: you can index them, slice them,
+# loop over them, use len(), an use in.The big difference is that a list is mutable (it can change in place)
+# while a string and a tuple are inmutable. A tuple is wrtitten with parentheses instead of squared brackets
+# A one-item tuple needs a trailing comma.
+name = "Zoe Lopez"
+print(name[0])
+print(name[-1])
+print("lo" in name)
+
+print(" ")
+
+# name[0] = "J"           #TypeError: 'str'  object does not support item assignment
+new_name = "J" + name[1:]  # Se construye un texto nuevo
+print(new_name)
+print(name)
+
+point = (10, 20, 30)
+print(point[1])  # 20
+# point[1] = 99          #TypeError: 'tuple' object does not support item assignnment
+
+one = "hola"  # tupla de un elemento: la coma es obligaotoria
+print(type("hola"))  # <class 'str'> (sin coma son solo parentesis)
+
+print(tuple([1, 2]))  # (1,2)
+print(list((1, 2)))  # [1,2]
+print(list("hola"))  # ['h', 'o', 'l', 'a']
